@@ -36,7 +36,7 @@ defineOptions({
 
 <style lang="scss" scoped>
 .header {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   display: flex;
@@ -51,7 +51,8 @@ defineOptions({
     align-items: center;
     width: 98%;
     background-color: rgba(255, 255, 255, 0.75);
-    padding: 0 16px;
+    padding: 0 16px 0 16px;
+    box-sizing: border-box;
   }
 
   &__underline {

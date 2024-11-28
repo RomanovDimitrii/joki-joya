@@ -2,6 +2,7 @@
 import LEFT_COLUMN_TEXT from '../constants/constants';
 import InfoSections from './InfoSections';
 import Cards from './Cards';
+import Slider from './Slider';
 defineOptions({
   name: 'Content'
 });
@@ -38,6 +39,7 @@ defineOptions({
         <Cards />
       </div>
     </section>
+    <Slider />
   </main>
 </template>
 
