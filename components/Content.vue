@@ -45,9 +45,11 @@ defineOptions({
 
 <style lang="scss" scoped>
 .main {
+  width: 100vw;
   padding: 0 112px 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   &__img {
     width: 100%;
