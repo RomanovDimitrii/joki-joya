@@ -13,7 +13,7 @@ defineOptions({
     <picture>
       <source srcset="/images/mainpage_photo_1x.png" media="(max-width: 1200px)" />
       <source srcset="/images/mainpage_photo_2x.png" media="(min-width: 1201px)" />
-      <img src="/images/mainpage_photo_2x.png" class="main__img" alt="Logo" />
+      <img id="titleImg" src="/images/mainpage_photo_2x.png" class="main__img" alt="Logo" />
     </picture>
     <div class="main__block">
       <div class="main__title-wrapper">

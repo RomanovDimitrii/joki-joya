@@ -10,6 +10,11 @@ defineProps({
   btnText: {
     type: String as PropType<string>,
     default: 'click'
+  },
+
+  btnImg: {
+    type: String as PropType<string> | null,
+    default: null
   }
 });
 </script>
@@ -17,10 +22,30 @@ defineProps({
 <template>
   <button class="button">
     <slot>{{ btnText }}</slot>
-    <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 10H32" :stroke="color" stroke-width="2" />
-      <path d="M23.322 1.32202L32 9.99999L23.322 18.678" :stroke="color" stroke-width="2" />
-    </svg>
+    <template v-if="btnImg">
+      <svg
+        width="17"
+        height="16"
+        viewBox="0 0 17 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1.62427 14.8694L15.3634 1.13037" stroke="white" stroke-width="2" />
+        <path d="M2.12817 1.37646H15.3757V14.624" stroke="white" stroke-width="2" />
+      </svg>
+    </template>
+    <template v-else>
+      <svg
+        width="34"
+        height="20"
+        viewBox="0 0 34 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 10H32" :stroke="color" stroke-width="2" />
+        <path d="M23.322 1.32202L32 9.99999L23.322 18.678" :stroke="color" stroke-width="2" />
+      </svg>
+    </template>
   </button>
 </template>
 

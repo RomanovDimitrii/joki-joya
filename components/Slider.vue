@@ -104,6 +104,7 @@ const goPrev = () => {
   overflow: hidden;
   box-sizing: border-box;
   margin: 50px 0 0;
+  padding-left: 00px;
   justify-content: flex-end;
   align-items: flex-end;
 
@@ -119,6 +120,7 @@ const goPrev = () => {
     color: #000;
     font-weight: bold;
     z-index: 10;
+    margin: 0 0 40px 0;
   }
 
   &__title-wrapper {
