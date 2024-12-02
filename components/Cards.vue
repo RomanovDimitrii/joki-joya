@@ -52,7 +52,7 @@ defineOptions({
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    padding: 32px 40px;
+    padding: 9.5% 16.6%;
     box-sizing: border-box;
 
     &__content {
@@ -64,17 +64,17 @@ defineOptions({
 
     &__subtitle {
       font-family: Drukwidecyr;
-      font-size: 13px;
+      font-size: 0.8125rem;
       font-weight: 400;
-      line-height: 16px;
+      line-height: 1;
       margin: 0;
     }
 
     &__title {
       font-family: DrukCyr;
-      font-size: 54px;
+      font-size: 3.375rem;
       font-weight: 400;
-      line-height: 48px;
+      line-height: 1;
       margin: 0;
     }
 

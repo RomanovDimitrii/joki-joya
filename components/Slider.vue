@@ -59,38 +59,39 @@ const goPrev = () => {
         <span class="slider__img-fragment slider__img-fragment--third"></span>
       </div>
     </div>
-    <swiper
-      :slides-per-view="1"
-      :space-between="0"
-      loop
-      :modules="modules"
-      :pagination="pagination"
-      :navigation="{
-        nextEl: '.custom-next',
-        prevEl: '.custom-prev'
-      }"
-      class="swiper"
-    >
-      <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <img :src="slide.image" :alt="slide.alt" class="slider-image" />
-      </swiper-slide>
-    </swiper>
-
-    <div class="slider-navigation">
-      <button class="custom-prev" @click="goPrev">
-        <img
-          class="slider-navigation__img"
-          src="/images/nav_arrow_prev.svg"
-          alt="предыдущая картинка"
-        />
-      </button>
-      <button class="custom-next" @click="goNext">
-        <img
-          class="slider-navigation__img"
-          src="/images/nav_arrow_next.svg"
-          alt="следующая картинка"
-        />
-      </button>
+    <div class="swiper__castom-wrapper">
+      <swiper
+        :slides-per-view="1"
+        :space-between="0"
+        loop
+        :modules="modules"
+        :pagination="pagination"
+        :navigation="{
+          nextEl: '.custom-next',
+          prevEl: '.custom-prev'
+        }"
+        class="swiper"
+      >
+        <swiper-slide v-for="(slide, index) in slides" :key="index">
+          <img :src="slide.image" :alt="slide.alt" class="slider-image" />
+        </swiper-slide>
+      </swiper>
+      <div class="slider-navigation">
+        <button class="custom-prev" @click="goPrev">
+          <img
+            class="slider-navigation__img"
+            src="/images/nav_arrow_prev.svg"
+            alt="предыдущая картинка"
+          />
+        </button>
+        <button class="custom-next" @click="goNext">
+          <img
+            class="slider-navigation__img"
+            src="/images/nav_arrow_next.svg"
+            alt="следующая картинка"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -103,23 +104,19 @@ const goPrev = () => {
   height: auto;
   overflow: hidden;
   box-sizing: border-box;
-  margin: 50px 0 0;
-  padding-left: 00px;
+  margin: 50px 0 0 7.77vw;
+
   justify-content: flex-end;
   align-items: flex-end;
 
   &__title-block {
-    /* position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%); */
-    width: 20vw;
+    width: 20%;
     display: flex;
     flex-direction: row;
     text-align: start;
     color: #000;
     font-weight: bold;
-    z-index: 10;
+
     margin: 0 0 40px 0;
   }
 
@@ -185,23 +182,22 @@ const goPrev = () => {
   }
 }
 
-/* .swiper-wrapper {
+.swiper__castom-wrapper {
   position: relative;
-  display: flex;
-  width: 100%;
-} */
+}
 
 .swiper {
   width: 100%;
   height: auto;
   max-width: 80vw;
   margin: 0 0 0 150px;
+  box-sizing: border-box;
 }
 
 .swiper-slide {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: auto;
   background: transparent;
@@ -216,8 +212,10 @@ const goPrev = () => {
 .slider-navigation {
   position: absolute;
   bottom: 48px;
-  left: calc(20vw - 28px);
+  /* left: calc(20vw - 28px); */
   /* transform: translateX(0%); */
+  left: 0;
+  transform: translateX(calc(150px - 50%));
   display: flex;
   z-index: 3;
 }

@@ -75,8 +75,8 @@ defineOptions({
 
     .section-title {
       font-family: Drukwidecyr;
-      font-size: 13px;
-      line-height: 16px;
+      font-size: 0.8125rem;
+      line-height: 1;
       font-weight: 400;
       letter-spacing: 3%;
       margin-top: 22px;

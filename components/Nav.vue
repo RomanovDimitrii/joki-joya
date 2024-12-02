@@ -66,6 +66,7 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
   background-color: #a66eff;
   display: flex;
   flex-direction: column;
+  z-index: 4;
 
   &__btn {
     color: #fff;

@@ -10,35 +10,41 @@ defineOptions({
 
 <template>
   <main class="main">
-    <picture>
-      <source srcset="/images/mainpage_photo_1x.png" media="(max-width: 1200px)" />
-      <source srcset="/images/mainpage_photo_2x.png" media="(min-width: 1201px)" />
-      <img id="titleImg" src="/images/mainpage_photo_2x.png" class="main__img" alt="Logo" />
-    </picture>
-    <div class="main__block">
-      <div class="main__title-wrapper">
-        <h1 class="main__title">О joki joya</h1>
-        <span class="main__title-img"></span>
-      </div>
+    <div class="wrapper-padding">
+      <picture>
+        <source srcset="/images/mainpage_photo_1x.png" media="(max-width: 1200px)" />
+        <source srcset="/images/mainpage_photo_2x.png" media="(min-width: 1201px)" />
+        <img id="titleImg" src="/images/mainpage_photo_2x.png" class="main__img" alt="Logo" />
+      </picture>
+      <div class="main__block">
+        <div class="main__title-wrapper">
+          <h1 class="main__title">О joki joya</h1>
+          <span class="main__title-img"></span>
+        </div>
 
-      <div class="circle-container">
-        <img src="/images/JJ_icon.png" alt="Joki-joya icon" class="center-image" />
+        <div class="circle-container">
+          <img src="/images/JJ_icon.png" alt="Joki-joya icon" class="center-image" />
 
-        <img src="/images/Party_all_the_time.png" alt="Party all the time" class="rotating-image" />
-      </div>
-    </div>
-    <section class="about">
-      <div class="vertical-column">
-        <div v-for="(item, index) in LEFT_COLUMN_TEXT" :key="index" class="text-with-image">
-          <span class="rotated-text">{{ item }}</span>
-          <img src="/images/snowflake.svg" alt="icon" class="vertical-column__image" />
+          <img
+            src="/images/Party_all_the_time.png"
+            alt="Party all the time"
+            class="rotating-image"
+          />
         </div>
       </div>
-      <div>
-        <InfoSections />
-        <Cards />
-      </div>
-    </section>
+      <section class="about">
+        <div class="vertical-column">
+          <div v-for="(item, index) in LEFT_COLUMN_TEXT" :key="index" class="text-with-image">
+            <span class="rotated-text">{{ item }}</span>
+            <img src="/images/snowflake.svg" alt="icon" class="vertical-column__image" />
+          </div>
+        </div>
+        <div>
+          <InfoSections />
+          <Cards />
+        </div>
+      </section>
+    </div>
     <Slider />
   </main>
 </template>
@@ -46,10 +52,11 @@ defineOptions({
 <style lang="scss" scoped>
 .main {
   width: 100vw;
-  padding: 0 112px 0;
+
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   &__img {
     width: 100%;
@@ -74,7 +81,7 @@ defineOptions({
 
   &__title {
     font-family: Drukwidecyr;
-    font-size: 4.56rem;
+    font-size: 73px;
     color: #0267ff;
     text-transform: uppercase;
     margin: 0;
@@ -108,6 +115,13 @@ defineOptions({
     background-position: left;
     position: relative;
   }
+}
+.wrapper-padding {
+  width: 100%;
+  padding: 0 7.77vw 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .circle-container {
@@ -168,7 +182,7 @@ defineOptions({
   text-transform: uppercase;
   transform: rotate(-180deg);
   white-space: nowrap;
-  font-size: 84px;
+  font-size: 5.25rem;
   font-weight: 400;
   line-height: 84px;
   text-align: end;

@@ -74,9 +74,9 @@ const handleBtnClick = (): void => {
   &__contacts-text {
     color: rgba(171, 236, 32, 1);
     font-family: Drukwidecyr;
-    font-size: 13px;
+    font-size: 0.8125rem;
     letter-spacing: 3%;
-    line-height: 16px;
+    line-height: 1;
 
     &:nth-of-type(even) {
       color: #fff;
@@ -118,9 +118,9 @@ const handleBtnClick = (): void => {
   &__trademark-text {
     color: #fff;
     font-family: Drukwidecyr;
-    font-size: 13px;
+    font-size: 0.8125rem;
     letter-spacing: 3%;
-    line-height: 16px;
+    line-height: 1;
     text-align: end;
   }
 }

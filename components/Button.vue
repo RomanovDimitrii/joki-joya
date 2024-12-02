@@ -54,7 +54,7 @@ defineProps({
   font-family: DrukCyr;
   font-weight: 400;
 
-  font-size: 22px;
+  font-size: 1.375rem;
   text-transform: uppercase;
   background-color: transparent;
   display: flex;

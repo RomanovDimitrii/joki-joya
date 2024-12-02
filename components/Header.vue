@@ -42,16 +42,16 @@ defineOptions({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 5;
 
   &__block {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 98%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.75);
-    padding: 0 16px 0 16px;
+    padding: 0 2vw 0 16px;
     box-sizing: border-box;
   }
 
@@ -148,7 +148,7 @@ defineOptions({
 
   &__burger-text {
     font-family: Montserrat;
-    line-height: 16px;
+    line-height: 1;
     font-size: 0.75rem;
     letter-spacing: 1%;
     text-transform: uppercase;
