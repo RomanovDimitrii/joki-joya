@@ -22,13 +22,11 @@ defineOptions({
       </div>
       <div class="section-paragraphs">
         <div class="column-paragraphs">
-          <p v-for="(paragraph, idx) in section.paragraphs2" :key="idx">
-            {{ paragraph }}
-          </p>
+          <p v-for="(paragraph, idx) in section.paragraphs2" :key="idx" v-html="paragraph"></p>
         </div>
 
         <a v-if="section.button" :href="section.button.link">
-          <Button color="#000" btnText="посмотреть адреса" />
+          <button color="#000" btnText="посмотреть адреса" />
         </a>
       </div>
     </div>
@@ -56,8 +54,8 @@ defineOptions({
     }
 
     .icon {
-      width: 128px;
-      height: 128px;
+      width: 8rem;
+      height: 8rem;
       background-repeat: no-repeat;
       background-size: contain;
 

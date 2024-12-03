@@ -1,5 +1,44 @@
 export default defineNuxtConfig({
-  // Подключение файлов стилей
+  app: {
+    head: {
+      title: 'Joki-Joya', // Устанавливает заголовок по умолчанию
+      meta: [{ name: 'description', content: 'Парки развлечений для детей' }],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
+        },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '96x96',
+          href: '/favicon-96x96.png'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '192x192',
+          href: '/web-app-manifest-192x192.png'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '512x512',
+          href: '/web-app-manifest-512x512.png'
+        },
+        {
+          rel: 'manifest',
+          href: '/site.webmanifest'
+        }
+      ]
+    }
+  },
   css: ['~/assets/styles/main.scss'],
 
   devtools: {
@@ -13,7 +52,5 @@ export default defineNuxtConfig({
       }
     },
     transpile: ['swiper'] // Транспиляция Swiper
-  },
-
-  compatibilityDate: '2024-11-30'
+  }
 });

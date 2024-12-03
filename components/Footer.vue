@@ -60,7 +60,7 @@ const handleBtnClick = (): void => {
   align-items: center;
 
   &__logo {
-    width: 102px;
+    width: 6.375rem;
     object-fit: contain;
   }
 
@@ -95,16 +95,16 @@ const handleBtnClick = (): void => {
     text-decoration: none;
     background-color: #fff;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   &__link-img {
-    width: 24.5;
-    object-fit: cover;
+    width: 1.53rem;
+    object-fit: contain;
   }
 
   &__trademark {

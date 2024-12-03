@@ -20,5 +20,12 @@ import Footer from '~/components/Footer.vue';
   width: 100vw;
   box-sizing: border-box;
   position: relative;
+
+  margin: 0 auto;
+  padding: 0;
+  margin: 0;
+  font-family: 'NunitoSans', sans-serif;
+  color: #000;
+  font-weight: 400;
 }
 </style>

@@ -36,7 +36,12 @@ defineOptions({
         <div class="vertical-column">
           <div v-for="(item, index) in LEFT_COLUMN_TEXT" :key="index" class="text-with-image">
             <span class="rotated-text">{{ item }}</span>
-            <img src="/images/snowflake.svg" alt="icon" class="vertical-column__image" />
+            <img
+              v-if="index !== 0"
+              src="/images/snowflake.svg"
+              alt="icon"
+              class="vertical-column__image"
+            />
           </div>
         </div>
         <div>
@@ -81,7 +86,7 @@ defineOptions({
 
   &__title {
     font-family: Drukwidecyr;
-    font-size: 73px;
+    font-size: 4.56rem;
     color: #0267ff;
     text-transform: uppercase;
     margin: 0;
@@ -97,8 +102,8 @@ defineOptions({
     &::after {
       content: 'joki joya';
       position: absolute;
-      top: 10px;
-      left: 115px;
+      top: 0.626rem;
+      left: 7.19rem;
       color: transparent;
       -webkit-text-stroke: 1px #abec20;
       z-index: -1;
@@ -107,13 +112,14 @@ defineOptions({
 
   &__title-img {
     margin-left: 19px;
-    width: 203px;
-    height: 56px;
+    width: 12.69rem;
+    height: 3.5rem;
     background-image: url('../public/images/star_20px_left.svg');
 
     display: inline-block;
     background-position: left;
     position: relative;
+    background-size: 4.5rem;
   }
 }
 .wrapper-padding {
@@ -122,31 +128,34 @@ defineOptions({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: rgba(237, 237, 237, 0.5);
+  /* background-color: rgba(243, 237, 237, 1); */
 }
 
 .circle-container {
   position: relative;
-  width: 144px;
-  height: 144px;
+  width: 9rem;
+  height: 9rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
 
-  margin: 10px 0 0 0;
+  margin: 1.5rem 0 0 0;
 
   .center-image {
     position: absolute;
-    width: 105px;
-    height: 105px;
-    top: 12px;
-    left: 15px;
+    width: 6.56rem;
+    height: 6.56rem;
+    top: 0.75rem;
+    left: 0.94rem;
     z-index: 3;
   }
 
   .rotating-image {
     position: absolute;
-    width: 144px;
-    height: 144px;
+    width: 9rem;
+    height: 9rem;
     animation: rotate 10s linear infinite;
   }
 }
@@ -161,11 +170,11 @@ defineOptions({
   display: flex;
   flex-direction: column-reverse;
 
-  row-gap: 40px;
+  row-gap: 2.5rem;
 
   &__image {
-    width: 64px;
-    height: 72px;
+    width: 4rem;
+    height: 4.5rem;
     margin: 0;
   }
 }

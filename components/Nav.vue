@@ -60,13 +60,15 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
   position: fixed;
   top: 0;
   margin: 0;
-  padding-top: 104px;
+  padding: 104px 23px 0;
   height: 100vh;
   width: 64px;
   background-color: #a66eff;
   display: flex;
   flex-direction: column;
   z-index: 4;
+  box-sizing: border-box;
+  align-items: center;
 
   &__btn {
     color: #fff;
@@ -98,12 +100,19 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
   }
 
   &__arrow {
+    width: 1rem;
     transition: transform 0.3s ease-in-out;
     margin-bottom: 8px;
 
     &_rotated {
       transform: rotate(180deg);
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav {
+    padding: 6.5rem 1.4rem 0;
   }
 }
 </style>

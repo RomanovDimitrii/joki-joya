@@ -17,13 +17,17 @@ defineOptions({
           />Москва
         </button>
         <button class="header__btn header__btn_call">
-          <img class="header__btn-icon" src="../public/images/phone_icon.png" alt="icon" />+7 (812)
-          635 22 77
+          <img
+            class="header__btn-icon header__btn-icon--small"
+            src="../public/images/phone_icon.png"
+            alt="icon"
+          />+7 (812) 635 22 77
         </button>
       </div>
       <div class="header__right-wrapper">
         <button class="header__btn header__btn_pink">Купить билеты</button>
         <button class="header__btn header__btn_green">Заказать праздник</button>
+
         <div class="header__burger-wrapper">
           <img class="header__burger" src="../public/images/burger.svg" alt="menu" />
           <span class="header__burger-text">Меню</span>
@@ -71,7 +75,7 @@ defineOptions({
   &__left-wrapper {
     display: flex;
     flex-direction: row;
-    column-gap: 20px;
+    column-gap: 1.25rem;
     align-items: center;
   }
 
@@ -84,15 +88,16 @@ defineOptions({
 
   &__btn {
     border: 2px #5834a4 solid;
-    border-radius: 30px;
-    padding: 8px 16px;
+    border-radius: 1.875rem;
+    padding: 0 1rem;
+    height: 2.5rem;
     color: #5834a4;
     font-family: DrukCyr;
     font-size: 1.375rem;
     text-transform: uppercase;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-    height: 40px;
+
     align-items: center;
     justify-content: center;
     display: flex;
@@ -127,12 +132,18 @@ defineOptions({
     width: 17px;
     object-fit: contain;
     margin-right: 10px;
+    padding: 4px 0;
+
+    &--small {
+      padding: 8.5px 0;
+    }
   }
 
   &__right-wrapper {
     display: flex;
     flex-direction: row;
-    column-gap: 16px;
+    column-gap: 1rem;
+    align-items: center;
   }
 
   &__burger-wrapper {
@@ -154,6 +165,25 @@ defineOptions({
     text-transform: uppercase;
     text-align: right;
     color: #0267ff;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    &__block {
+      padding: 0.1rem 2vw 0.1rem 16px;
+    }
+
+    &__logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    &__btn-icon {
+      width: 1.05rem;
+    }
+    &__burger {
+      width: 1.8rem;
+    }
   }
 }
 </style>
