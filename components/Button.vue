@@ -47,6 +47,7 @@ defineProps({
   background-color: transparent;
   display: flex;
   align-items: center;
+  text-wrap: nowrap;
 
   column-gap: 10px;
   color: v-bind(color);

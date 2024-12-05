@@ -61,7 +61,6 @@ defineOptions({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  overflow-x: hidden;
 
   &__img {
     width: 100%;
@@ -98,7 +97,7 @@ defineOptions({
       color: black;
     }
 
-    // Дублирование текста без заливки с зеленой обводкой
+    // Дублирование текста
     &::after {
       content: 'joki joya';
       position: absolute;
@@ -129,7 +128,6 @@ defineOptions({
   flex-direction: column;
   box-sizing: border-box;
   background-color: rgba(237, 237, 237, 0.5);
-  /* background-color: rgba(243, 237, 237, 1); */
 }
 
 .circle-container {
@@ -162,15 +160,18 @@ defineOptions({
 
 .about {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .vertical-column {
   display: flex;
   flex-direction: column-reverse;
+  justify-content: space-between;
 
-  row-gap: 2.5rem;
+  /* row-gap: 2.5rem; */
 
   &__image {
     width: 4rem;
@@ -193,14 +194,14 @@ defineOptions({
   white-space: nowrap;
   font-size: 5.25rem;
   font-weight: 400;
-  line-height: 84px;
+  line-height: 1;
   text-align: end;
-  margin: 40px 0 0;
+  margin: 2.5rem 0 0;
   writing-mode: vertical-rl;
   color: #fff;
   -webkit-text-stroke: 1.27px #000000; /*  для WebKit */
   text-shadow: 1.27px 1.27px 0 #000000, -1.27px 1.27px 0 #000000, 1.27px -1.27px 0 #000000,
-    -1.27px -1.27px 0 #000000; /*  другие браузеры */
+    -1.27px -1.27px 0 #000000; /*  other */
 }
 
 @keyframes rotate {
@@ -209,6 +210,92 @@ defineOptions({
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    &__img {
+      width: 100%;
+      object-fit: none;
+    }
+
+    &__block {
+      margin-bottom: 72px;
+      flex-direction: row;
+    }
+
+    &__title {
+      font-size: 4.56rem;
+      margin: 0;
+
+      // Дублирование текста
+      &::after {
+        top: 0.626rem;
+        left: 7.19rem;
+      }
+    }
+
+    &__title-img {
+      margin-left: 19px;
+      width: 5rem;
+      height: 3.5rem;
+      background-size: 4.5rem;
+    }
+  }
+  .wrapper-padding {
+    padding: 0 7.77vw 0;
+  }
+
+  .circle-container {
+    width: 9rem;
+    height: 9rem;
+    margin: 1.5rem 0 0 0;
+
+    .center-image {
+      width: 6.56rem;
+      height: 6.56rem;
+      top: 0.75rem;
+      left: 0.94rem;
+    }
+
+    .rotating-image {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+
+  .about {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .vertical-column {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    &__image {
+      width: 4rem;
+      height: 4.5rem;
+      margin: 0;
+    }
+  }
+
+  .rotated-text {
+    font-size: 5.25rem;
+    line-height: 1;
+    text-align: end;
+    margin: 2.5rem 0 0;
+    writing-mode: vertical-rl;
+  }
+}
+
+@media (max-width: 540px) {
+  .main {
+    &__block {
+      margin-bottom: 32px;
+      flex-direction: column;
+    }
   }
 }
 </style>

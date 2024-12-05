@@ -14,18 +14,18 @@ import Footer from '~/components/Footer.vue';
 
 <style lang="scss" scoped>
 .body {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  box-sizing: border-box;
-  position: relative;
+  align-items: center; */
+  /* width: 100vw; */
+  /* box-sizing: border-box;
+  position: relative; */
 
-  margin: 0 auto;
   padding: 0;
   margin: 0;
   font-family: 'NunitoSans', sans-serif;
   color: #000;
   font-weight: 400;
+  overflow-x: hidden;
 }
 </style>

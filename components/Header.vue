@@ -46,6 +46,7 @@ defineOptions({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
   z-index: 5;
 
   &__block {
@@ -55,8 +56,9 @@ defineOptions({
     align-items: center;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.75);
-    padding: 0 2vw 0 16px;
+    padding: 0.1rem 2vw 0.1rem 16px;
     box-sizing: border-box;
+    height: 4rem;
   }
 
   &__underline {
@@ -80,8 +82,8 @@ defineOptions({
   }
 
   &__logo {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: contain;
     margin: 12px 56px 12px 16px;
   }
@@ -129,7 +131,7 @@ defineOptions({
   }
 
   &__btn-icon {
-    width: 17px;
+    width: 1.0625rem;
     object-fit: contain;
     margin-right: 10px;
     padding: 4px 0;
@@ -153,7 +155,7 @@ defineOptions({
   }
 
   &__burger {
-    width: 32px;
+    width: 1.8rem;
     object-fit: contain;
   }
 
@@ -168,21 +170,66 @@ defineOptions({
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 640px) {
   .header {
     &__block {
-      padding: 0.1rem 2vw 0.1rem 16px;
+      height: 4rem;
+    }
+
+    &__underline {
+      height: 3px;
+    }
+
+    &__left-wrapper {
+      column-gap: 1.25rem;
     }
 
     &__logo {
       width: 2.5rem;
       height: 2.5rem;
+
+      margin: 12px 56px 12px 16px;
     }
+
+    &__btn {
+      display: none;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &_pink {
+        display: flex;
+        font-size: 1.375rem;
+      }
+    }
+
     &__btn-icon {
-      width: 1.05rem;
+      width: 1.0625rem;
+      object-fit: contain;
+      margin-right: 10px;
+      padding: 4px 0;
     }
+
+    &__right-wrapper {
+      column-gap: 1rem;
+      align-items: center;
+    }
+
+    &__burger-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
     &__burger {
       width: 1.8rem;
+      object-fit: contain;
+    }
+
+    &__burger-text {
+      line-height: 1;
+      font-size: 0.75rem;
     }
   }
 }

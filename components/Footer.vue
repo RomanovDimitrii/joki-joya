@@ -88,7 +88,7 @@ const handleBtnClick = (): void => {
 
     align-items: center;
     list-style: none;
-    gap: 80px;
+    gap: 5rem;
   }
 
   &__link {
@@ -123,5 +123,8 @@ const handleBtnClick = (): void => {
     line-height: 1;
     text-align: end;
   }
+}
+
+@media (max-width: 800px) {
 }
 </style>

@@ -60,9 +60,9 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
   position: fixed;
   top: 0;
   margin: 0;
-  padding: 104px 23px 0;
+  padding: 6.5rem 23px 0;
   height: 100vh;
-  width: 64px;
+  width: 4rem;
   background-color: #a66eff;
   display: flex;
   flex-direction: column;
@@ -76,6 +76,7 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 113px;
     cursor: pointer;
@@ -95,14 +96,14 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
     font-family: DrukCyr;
     letter-spacing: 3%;
     font-size: 1.5rem;
-    margin: 0 13px 0 0;
+    margin: 0 0 0 0;
     text-transform: uppercase;
   }
 
   &__arrow {
     width: 1rem;
     transition: transform 0.3s ease-in-out;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 
     &_rotated {
       transform: rotate(180deg);
@@ -110,9 +111,16 @@ const toggleArrowRotation = (key: keyof typeof arrowRotationState.value) => {
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 640px) {
   .nav {
-    padding: 6.5rem 1.4rem 0;
+    width: 1rem;
+    padding: 104px 2rem 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .nav {
+    display: none;
   }
 }
 </style>

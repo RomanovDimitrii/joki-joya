@@ -102,7 +102,6 @@ const goPrev = () => {
 
   width: 100%;
   height: auto;
-  /* overflow: hidden; */
   box-sizing: border-box;
   padding: 0 0 0 7.77vw;
 
@@ -263,5 +262,15 @@ const goPrev = () => {
   background: rgba(171, 236, 32, 1);
   border-radius: 1rem;
   opacity: 100;
+}
+
+@media (max-width: 690px) {
+  .swiper {
+    margin: 0 0 0 7.375rem;
+  }
+
+  .slider-navigation {
+    transform: translateX(calc(7.375rem - 50%));
+  }
 }
 </style>
