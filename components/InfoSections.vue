@@ -139,30 +139,64 @@ a {
 
 @media (max-width: 676px) {
   .info-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Две колонки равной ширины */
-    grid-template-areas:
-      'icon title'
-      'paragraphs1 paragraphs2';
+    display: flex;
+    flex-direction: column;
 
-    column-gap: 1.5rem; /* Расстояние между колонками */
-    row-gap: 1.5rem; /* Расстояние между строками */
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
+  .first-section {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas: 'icon title'; /* Сетка для иконки и заголовка */
+    column-gap: 0.5rem;
+
+    justify-content: flex-start;
   }
 
   .icon {
     grid-area: icon;
+    width: 5rem;
+    height: 5rem;
   }
 
   .section-title {
-    grid-area: title; /* Определяем область для заголовка */
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+    margin: 0 0 0 1rem;
   }
 
   .section-paragraphs:first-of-type {
-    grid-area: paragraphs1; /* Левая колонка для первых абзацев */
+    grid-area: paragraphs1;
   }
 
   .section-paragraphs:last-of-type {
     grid-area: paragraphs2;
+  }
+}
+
+@media (max-width: 390px) {
+  .info-section {
+  }
+
+  .first-section {
+    grid-template-areas: 'icon title'; /* Сетка для иконки и заголовка */
+    column-gap: 0.5rem;
+    position: relative;
+  }
+
+  .icon {
+    grid-area: icon;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .section-title {
+    grid-area: title;
+
+    margin: 0 0 0 1rem;
   }
 }
 </style>

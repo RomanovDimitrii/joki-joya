@@ -35,12 +35,13 @@ defineOptions({
       <section class="about">
         <div class="vertical-column">
           <div v-for="(item, index) in LEFT_COLUMN_TEXT" :key="index" class="text-with-image">
+            <img src="/images/snowflake.svg" alt="icon" class="vertical-column__image" />
             <span class="rotated-text">{{ item }}</span>
             <img
               v-if="index !== 0"
               src="/images/snowflake.svg"
               alt="icon"
-              class="vertical-column__image"
+              class="vertical-column__second-image"
             />
           </div>
         </div>
@@ -171,12 +172,14 @@ defineOptions({
   flex-direction: column-reverse;
   justify-content: space-between;
 
-  /* row-gap: 2.5rem; */
-
   &__image {
     width: 4rem;
     height: 4.5rem;
     margin: 0;
+  }
+
+  &__second-image {
+    display: none;
   }
 }
 
@@ -218,6 +221,7 @@ defineOptions({
     &__img {
       width: 100%;
       object-fit: none;
+      min-height: 40rem;
     }
 
     &__block {
@@ -273,10 +277,18 @@ defineOptions({
   .vertical-column {
     flex-direction: column-reverse;
     justify-content: space-between;
+    padding-top: 6rem;
 
     &__image {
       width: 4rem;
       height: 4.5rem;
+      margin: 0;
+    }
+
+    &__second-image {
+      width: 4rem;
+      height: 4.5rem;
+      display: flex;
       margin: 0;
     }
   }
@@ -285,7 +297,7 @@ defineOptions({
     font-size: 5.25rem;
     line-height: 1;
     text-align: end;
-    margin: 2.5rem 0 0;
+    margin: 0.5rem 0 0.5rem;
     writing-mode: vertical-rl;
   }
 }

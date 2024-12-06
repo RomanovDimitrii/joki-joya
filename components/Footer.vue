@@ -13,6 +13,9 @@ const handleBtnClick = (): void => {
 
 <template>
   <footer class="footer">
+    <div class="footer__btn-mobile">
+      <Button color="#fff" btnText="Наверх" btnImg="Наверх" @click="handleBtnClick" />
+    </div>
     <img class="footer__logo" src="/images/Logo_footer.png" alt="логотип" />
     <ul class="footer__contacts">
       <li class="footer__contacts-text">+7 (495) 181 22 77</li>
@@ -42,7 +45,7 @@ const handleBtnClick = (): void => {
       <li class="footer__trademark-text">2023</li>
       <li class="footer__trademark-text">joki-joya.ru</li>
     </ul>
-    <div>
+    <div class="footer__btn-desktop">
       <Button color="#fff" btnText="Наверх" btnImg="Наверх" @click="handleBtnClick" />
     </div>
   </footer>
@@ -58,6 +61,10 @@ const handleBtnClick = (): void => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__btn-mobile {
+    display: none;
+  }
 
   &__logo {
     width: 6.375rem;
@@ -125,6 +132,72 @@ const handleBtnClick = (): void => {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__btn-mobile {
+      display: flex;
+      margin-bottom: 3rem;
+    }
+
+    &__contacts {
+      padding: 0;
+    }
+
+    &__logo {
+      width: 6.375rem;
+      object-fit: contain;
+    }
+
+    &__links {
+      padding: 0;
+      display: flex;
+
+      align-items: center;
+      list-style: none;
+      gap: 5rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      background-color: #fff;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__link-img {
+      width: 1.53rem;
+      object-fit: contain;
+    }
+
+    &__trademark {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0px;
+      list-style: none;
+      justify-content: center;
+    }
+
+    &__trademark-text {
+      color: #fff;
+      font-family: Drukwidecyr;
+      font-size: 0.8125rem;
+      letter-spacing: 3%;
+      line-height: 1;
+      text-align: center;
+    }
+
+    &__btn-desktop {
+      display: none;
+    }
+  }
 }
 </style>

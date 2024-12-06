@@ -71,4 +71,16 @@ defineProps({
     height: auto;
   }
 }
+
+@media (max-width: 540px) {
+  .button {
+    font-size: 2.375rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .button {
+    font-size: 1.375rem;
+  }
+}
 </style>

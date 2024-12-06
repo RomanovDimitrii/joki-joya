@@ -101,4 +101,54 @@ defineOptions({
     }
   }
 }
+
+@media (max-width: 676px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    gap: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .cards {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+    .card {
+      &__subtitle {
+        font-size: 1.3rem;
+      }
+
+      &__title {
+        font-size: 4.6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 240px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    gap: 0;
+    .card {
+      &__subtitle {
+        font-size: 0.8125rem;
+
+        margin: 0;
+      }
+
+      &__title {
+        font-size: 3.375rem;
+
+        margin: 0;
+      }
+    }
+  }
+}
 </style>
