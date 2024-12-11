@@ -9,7 +9,7 @@ import 'swiper/scss/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
 const slides = [
-  { image: 'public/images/slider_img1.png', alt: 'Slide 1' },
+  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 1' },
   { image: '/joki-joya/images/mainpage_photo_1x.png', alt: 'Slide 2' },
   { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 3' },
   { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 4' },

@@ -1,12 +1,12 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/', // Учитываем GitHub Pages
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     buildAssetsDir: '/_nuxt/' // Папка для статических файлов
   },
   ssr: false, // Отключаем серверный рендеринг (SPA)
   css: ['~/assets/styles/main.scss'], // Подключаем глобальные стили
   devtools: {
-    enabled: true // Включаем инструменты разработчика (по желанию)
+    enabled: true
   },
   nitro: {
     preset: 'github-pages' // Указываем предустановку для деплоя на GitHub Pages
