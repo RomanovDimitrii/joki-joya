@@ -8,13 +8,17 @@ import 'swiper/scss/pagination';
 
 import { Navigation, Pagination } from 'swiper/modules';
 
+const runtimeConfig = useRuntimeConfig();
+
+const baseURL = runtimeConfig.public.baseURL || '/';
+
 const slides = [
-  { image: 'public/images/slider_img1.png', alt: 'Slide 1' },
-  { image: '/joki-joya/images/mainpage_photo_1x.png', alt: 'Slide 2' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 3' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 4' },
-  { image: '/joki-joya/images/mainpage_photo_1x.png', alt: 'Slide 5' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 6' }
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 1' },
+  { image: `${baseURL}images/mainpage_photo_1x.png`, alt: 'Slide 2' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 3' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 4' },
+  { image: `${baseURL}images/mainpage_photo_1x.png`, alt: 'Slide 5' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 6' }
 ];
 
 const swiperInstance = ref(null);
@@ -29,19 +33,15 @@ const pagination = {
 const modules = [Navigation, Pagination];
 
 const goNext = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slideNext();
-  } else {
-    console.error('Swiper instance is not initialized yet.');
-  }
+  swiperInstance.value?.slideNext();
 };
 
 const goPrev = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slidePrev();
-  } else {
-    console.error('Swiper instance is not initialized yet.');
-  }
+  swiperInstance.value?.slidePrev();
+};
+
+const onSwiperInit = swiper => {
+  swiperInstance.value = swiper; // Сохранение экземпляра Swiper
 };
 </script>
 
@@ -71,6 +71,7 @@ const goPrev = () => {
           prevEl: '.custom-prev'
         }"
         class="swiper"
+        @swiper="onSwiperInit"
       >
         <swiper-slide v-for="(slide, index) in slides" :key="index">
           <img :src="slide.image" :alt="slide.alt" class="slider-image" />

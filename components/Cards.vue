@@ -38,7 +38,6 @@ defineOptions({
   width: 100%;
   gap: 0;
   padding: 50px 0 0 6.875rem;
-  /* margin-bottom: 50px; */
   box-sizing: border-box;
 
   .card {
