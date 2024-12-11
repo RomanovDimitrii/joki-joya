@@ -1,11 +1,11 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/', // Базовый путь для разработки и деплоя
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       link: [
         {
           rel: 'manifest',
-          href: `${process.env.NUXT_APP_BASE_URL || '/'}site.webmanifest` // Ссылка на манифест
+          href: `${process.env.NUXT_APP_BASE_URL || '/'}site.webmanifest`
         },
         {
           rel: 'icon',
@@ -23,18 +23,18 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'theme-color',
-          content: '#ffffff' // Цвет темы
+          content: '#ffffff'
         },
         {
           name: 'background-color',
-          content: '#ffffff' // Фоновый цвет
+          content: '#ffffff'
         }
       ]
     }
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env.NUXT_APP_BASE_URL || '/' // Публичная переменная для baseURL
+      baseURL: process.env.NUXT_APP_BASE_URL || '/'
     }
   },
   ssr: false,

@@ -33,19 +33,15 @@ const pagination = {
 const modules = [Navigation, Pagination];
 
 const goNext = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slideNext();
-  } else {
-    console.error('Swiper instance is not initialized yet.');
-  }
+  swiperInstance.value?.slideNext();
 };
 
 const goPrev = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slidePrev();
-  } else {
-    console.error('Swiper instance is not initialized yet.');
-  }
+  swiperInstance.value?.slidePrev();
+};
+
+const onSwiperInit = swiper => {
+  swiperInstance.value = swiper; // Сохранение экземпляра Swiper
 };
 </script>
 
@@ -75,6 +71,7 @@ const goPrev = () => {
           prevEl: '.custom-prev'
         }"
         class="swiper"
+        @swiper="onSwiperInit"
       >
         <swiper-slide v-for="(slide, index) in slides" :key="index">
           <img :src="slide.image" :alt="slide.alt" class="slider-image" />
