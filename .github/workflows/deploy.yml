@@ -8,10 +8,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Явно указываем стабильную версию Runner
     steps:
       # Проверка кода
       - uses: actions/checkout@v4
+
+      # Настройка Git
+      - name: Configure Git
+        run: |
+          git config --global user.name "RomanovDimitrii"
+          git config --global user.email "romdim197@gmail.com"
 
       # Установка Node.js
       - run: corepack enable
@@ -22,13 +28,18 @@ jobs:
       # Установка зависимостей
       - run: npm install
 
-      # Сборка Nuxt-приложения для GitHub Pages
+      # Сборка Nuxt-приложения
       - run: NUXT_APP_BASE_URL=/joki-joya/ npx nuxi generate
 
-      # Деплой в ветку gh-pages
+        # Отладка содержимого директории
+      - name: Debug Build Output
+        run: ls -la ./.output/public
+
+      # Деплой в gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.output/public
           publish_branch: gh-pages
+          force_orphan: true
