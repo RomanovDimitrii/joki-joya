@@ -8,7 +8,9 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-22.04
+
     steps:
       # Проверка кода
       - uses: actions/checkout@v4
@@ -28,10 +30,13 @@ jobs:
       # Установка зависимостей
       - run: npm install
 
+
       # Генерация статического сайта
       - run: NUXT_APP_BASE_URL=/joki-joya/ npx nuxi generate
 
       # Отладка содержимого директории
+
+
       - name: Debug Build Output
         run: ls -la ./.output/public
 
