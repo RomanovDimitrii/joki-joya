@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Проверка кода
+      - uses: actions/checkout@v4
+
+      # Установка Node.js
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Установка зависимостей
+      - run: npm install
+
+      # Сборка Nuxt-приложения для GitHub Pages
+      - run: NUXT_APP_BASE_URL=/joki-joya/ npx nuxi generate --preset github_pages
+
+      # Сохранение артефактов
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./.output/public
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github_pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

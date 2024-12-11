@@ -1,32 +1,22 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/joki-joya/' : '/',
-    cdnURL: process.env.NODE_ENV === 'production' ? '/joki-joya/' : '/',
-    head: {
-      title: 'Joki-Joya',
-      meta: [{ name: 'description', content: 'Парки развлечений для детей' }],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
-        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/web-app-manifest-192x192.png' },
-        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/web-app-manifest-512x512.png' },
-        { rel: 'manifest', href: '/site.webmanifest' }
-      ]
-    }
+    baseURL: process.env.NUXT_APP_BASE_URL || '/', // Учитываем GitHub Pages
+    buildAssetsDir: '/_nuxt/' // Папка для статических файлов
   },
-  css: ['~/assets/styles/main.scss'],
-
+  ssr: false, // Отключаем серверный рендеринг (SPA)
+  css: ['~/assets/styles/main.scss'], // Подключаем глобальные стили
   devtools: {
-    enabled: true
+    enabled: true // Включаем инструменты разработчика (по желанию)
   },
-
+  nitro: {
+    preset: 'github-pages' // Указываем предустановку для деплоя на GitHub Pages
+  },
   build: {
+    transpile: ['swiper'], // Транспилируем Swiper для совместимости
     loaders: {
       scss: {
-        implementation: require('sass')
+        implementation: require('sass') // Используем Sass для SCSS файлов
       }
-    },
-    transpile: ['swiper']
+    }
   }
 });
