@@ -32,6 +32,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.NUXT_APP_BASE_URL || '/' // Публичная переменная для baseURL
+    }
+  },
   ssr: false,
   css: ['~/assets/styles/main.scss'],
   devtools: {

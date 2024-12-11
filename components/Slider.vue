@@ -8,13 +8,17 @@ import 'swiper/scss/pagination';
 
 import { Navigation, Pagination } from 'swiper/modules';
 
+const runtimeConfig = useRuntimeConfig();
+
+const baseURL = runtimeConfig.public.baseURL || '/';
+
 const slides = [
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 1' },
-  { image: '/joki-joya/images/mainpage_photo_1x.png', alt: 'Slide 2' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 3' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 4' },
-  { image: '/joki-joya/images/mainpage_photo_1x.png', alt: 'Slide 5' },
-  { image: '/joki-joya/images/slider_img1.png', alt: 'Slide 6' }
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 1' },
+  { image: `${baseURL}images/mainpage_photo_1x.png`, alt: 'Slide 2' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 3' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 4' },
+  { image: `${baseURL}images/mainpage_photo_1x.png`, alt: 'Slide 5' },
+  { image: `${baseURL}images/slider_img1.png`, alt: 'Slide 6' }
 ];
 
 const swiperInstance = ref(null);
